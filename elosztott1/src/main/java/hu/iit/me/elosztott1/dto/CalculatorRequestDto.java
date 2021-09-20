@@ -1,4 +1,4 @@
-package hu.iit.me.elosztott1;
+package hu.iit.me.elosztott1.dto;
 
 import lombok.Data;
 

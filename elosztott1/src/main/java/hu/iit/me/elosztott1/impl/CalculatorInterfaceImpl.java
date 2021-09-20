@@ -1,5 +1,6 @@
-package hu.iit.me.elosztott1;
+package hu.iit.me.elosztott1.impl;
 
+import hu.iit.me.elosztott1.CalculatorInterface;
 import org.springframework.stereotype.Service;
 
 @Service
