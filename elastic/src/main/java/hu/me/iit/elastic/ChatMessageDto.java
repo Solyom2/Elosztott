@@ -22,8 +22,10 @@ public class ChatMessageDto {
         return ChatMessage.builder()
                 .id(this.getId())
                 .message(this.getMessage())
+                .sender(this.getSender())
                 .roomId(this.getRoomId())
                 .roomName(this.getRoomName())
+                .build();
     }
 
 }

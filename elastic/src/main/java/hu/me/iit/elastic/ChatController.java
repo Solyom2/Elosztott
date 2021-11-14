@@ -16,16 +16,25 @@ public class ChatController {
 
     @PostMapping()
     public void newData(@RequestBody @Valid ChatMessageDto chatMessageDto) {
-        chatMessageRepository.save( chatMessageDto.toDocument());
+        chatMessageRepository.save(chatMessageDto.toDocument());
     }
 
     @GetMapping()
-    public Page<ChatMessage> findByMessage(@RequestBody @Valid FindByDto senderDto) {
+    public Page<ChatMessage> findBySender(@RequestBody @Valid FindByDto senderDto) {
         return chatMessageRepository.findBySender(
                 senderDto.getQuery(),
                 PageRequest.of(0, 10)
         );
     }
 
+    @GetMapping("/find")
+    public Page<ChatMessage> findBySenderOrMessageOrRoomName(@RequestBody @Valid FindByDto query) {
+        return chatMessageRepository.findBySenderOrMessageOrRoomName(
+                query.getQuery(),
+                query.getQuery(),
+                query.getQuery(),
+                PageRequest.of(0, 10)
+        );
+    }
 
 }
